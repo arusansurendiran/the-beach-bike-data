@@ -16,15 +16,15 @@ df_status = pd.DataFrame(status_data)
 df_info = pd.DataFrame(info_data)
 df = pd.merge(df_status, df_info, on='station_id')
 
-# Filter for the Beach BIA bounding box
-beach_stations = df[
-    (df['lon'] >= -79.315) & (df['lon'] <= -79.280) &
-    (df['lat'] >= 43.660) & (df['lat'] <= 43.675)
-].copy()
+# List of specific station IDs provided by you
+target_ids = ["7319", "7313", "7309", "7303", "8190", "7314", "7427", "7695", "7428", "7365", "7692", "7315", "7317", "7318", "7316", "7364"]
 
+# Filter the dataframe to only include these IDs
+# This converts everything to a string before checking, so it never fails
+beach_stations = df[df['station_id'].astype(str).isin(target_ids)].copy()
 
 # Select useful columns and add a timestamp
-beach_stations = beach_stations[['name', 'num_bikes_available', 'num_docks_available']]
+beach_stations = beach_stations[['station_id', 'name', 'lat', 'lon', 'capacity', 'num_bikes_available', 'num_docks_available']]
 beach_stations['timestamp'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Save or append to the CSV
