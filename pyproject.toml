@@ -1,0 +1,9 @@
+[project]
+name = "the-beaches-bike-scraper"
+version = "0.1.0"
+description = "Scraping Bike Share data for the Beach BIA"
+requires-python = ">=3.12"
+dependencies = [
+    "requests",
+    "pandas>=2.2.0",
+]
