@@ -2,7 +2,7 @@ name: Scrape Bike Share Data
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0,30 * * * *'
   workflow_dispatch:
 
 jobs:
