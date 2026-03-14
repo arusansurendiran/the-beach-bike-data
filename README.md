@@ -4,7 +4,7 @@ An automated data pipeline monitoring real-time activity across 16 curated **Bik
 
 ---
 
-### 🚀 What It Does
+### What It Does
 
 * **Real-time Monitoring:** Captures bike/dock availability, capacity, and GPS coordinates for 16 specific "Beach" stations.
 * **Automated Scrape:** Runs every **15 minutes** via **GitHub Actions** using the `uv` package manager for high-speed performance.
@@ -15,7 +15,7 @@ An automated data pipeline monitoring real-time activity across 16 curated **Bik
 Focuses on **16 strategic locations** representing the core Beaches area:
 > `7319, 7313, 7309, 7303, 8190, 7314, 7427, 7695, 7428, 7365, 7692, 7315, 7317, 7318, 7316, 7364`
 
-### 📁 File Structure
+### File Structure
 * **`scraper.py`**: Python script for fetching and filtering GBFS data.
 * **`pyproject.toml`**: Modern project metadata and dependencies.
 * **`beach_bike_data.csv`**: The primary historical dataset.
